@@ -1,9 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <!-- Link your CSS file and other references here -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A task manager showing the tasks in your inbox.">
+        <title>Inbox - Task Manager</title>
+
+        <!-- Roboto font from Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap">
+
+        <!-- Site styles -->
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <!-- Content goes here -->
+        <!-- ========== HEADER ========== -->
+        <header class="main-header">
+            <button class="menu-button" type="button">
+                <img class="header-icon" src="assets/menu_icon.png" alt="Open menu" width="24" height="24">
+            </button>
+
+            <search class="quick-find">
+                <label class="quick-find-label" for="quick-find-input">
+                    <img class="header-icon" src="assets/search_icon.png" alt="Quick find" width="24" height="24">
+                </label>
+                <input class="quick-find-input" id="quick-find-input" type="text" placeholder="Quick find" autocomplete="off">
+            </search>
+
+            <p class="task-counter">
+                <img class="header-icon" src="assets/check_icon.png" alt="Tasks completed:" width="24" height="24">
+                30/5
+            </p>
+        </header>
+
+        <div class="content-wrapper">
+            <!-- ========== LEFT NAVIGATION ========== -->
+            <nav class="sidebar" aria-label="Task categories">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-active" href="#inbox" aria-current="page">
+                            <img class="nav-icon" src="assets/inbox_icon.png" alt="" width="24" height="24">
+                            Inbox
+                            <span class="nav-count">5</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#today">
+                            <img class="nav-icon" src="assets/calendar_icon.png" alt="" width="24" height="24">
+                            Today
+                            <span class="nav-count">5</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#upcoming">
+                            <img class="nav-icon" src="assets/upcoming_icon.png" alt="" width="24" height="24">
+                            Upcoming
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- ========== MAIN CONTENT ========== -->
+            <main class="main-content">
+                <section class="task-section" id="inbox" aria-labelledby="inbox-heading">
+                    <h1 class="section-heading" id="inbox-heading">Inbox</h1>
+
+                    <ul class="task-list">
+                        <li class="task-item">
+                            <input class="task-checkbox" id="task-call-mom" type="checkbox">
+                            <label class="task-label" for="task-call-mom">Call Mom</label>
+                        </li>
+                        <li class="task-item">
+                            <input class="task-checkbox" id="task-scientific-american" type="checkbox">
+                            <label class="task-label" for="task-scientific-american">Buy the new issue of Scientific American</label>
+                        </li>
+                        <li class="task-item">
+                            <input class="task-checkbox" id="task-return-textbook" type="checkbox">
+                            <label class="task-label" for="task-return-textbook">Return the textbook to Josie</label>
+                        </li>
+                        <li class="task-item">
+                            <input class="task-checkbox" id="task-rake-album" type="checkbox">
+                            <label class="task-label" for="task-rake-album">Buy the new album by Rake</label>
+                        </li>
+                        <li class="task-item">
+                            <input class="task-checkbox" id="task-gift-card" type="checkbox">
+                            <label class="task-label" for="task-gift-card">Buy a gift card for Dad</label>
+                        </li>
+                    </ul>
+                </section>
+            </main>
+        </div>
     </body>
 </html>
